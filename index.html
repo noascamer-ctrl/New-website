@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DARKVOID WEBSITE #1</title>
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      color:#e6eef8;
+      background:linear-gradient(180deg,#05060a 0%, #081226 50%, #0b1530 100%);
+      overflow:auto;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* starfield */
+    .stars, .stars::after{
+      position:fixed;inset:0;content:'';z-index:0;pointer-events:none;
+      background-image: radial-gradient(#ffffff22 1px, transparent 1px), radial-gradient(#ffffff11 1px, transparent 1px);
+      background-size: 120px 120px, 40px 40px;
+      mix-blend-mode:screen;opacity:.45;
+      animation: drift 60s linear infinite;
+    }
+    .stars::after{opacity:.25;animation-duration:140s}
+    @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-200px,120px,0)}}
+
+    /* subtle noise overlay */
+    .noise{position:fixed;inset:0;z-index:1;opacity:.06;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="f"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23f)"/></svg>');pointer-events:none}
+
+    .wrap{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+
+    .card{
+      width:100%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+      border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(8px);
+      border-radius:14px;padding:28px;box-shadow:0 12px 40px rgba(2,6,23,0.6);
+      display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start
+    }
+
+    .hero{
+      padding:18px 12px;
+    }
+    .title{font-size:34px;letter-spacing:1px;margin-bottom:8px;font-weight:700}
+    .subtitle{color:#b9c7dd;font-size:13px;margin-bottom:18px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#ff6b6b33,#8b5cf633);font-size:12px;color:#ffdcdc;margin-bottom:12px}
+
+    .groups{display:flex;flex-direction:column;gap:12px}
+    .group{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .group h3{font-size:13px;margin-bottom:8px;color:#e9f2ff}
+    .btn-row{display:flex;flex-wrap:wrap;gap:8px}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;font-size:13px;text-decoration:none;color:inherit;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);
+      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;min-width:110px;justify-content:center
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(3,9,30,0.6)}
+    .btn .dot{width:8px;height:8px;border-radius:50%;background:#7dd3fc;box-shadow:0 0 8px #7dd3fc55}
+
+    /* right column */
+    .preview{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.03)}
+    .preview h4{font-size:14px;margin-bottom:8px}
+    .links{display:flex;flex-direction:column;gap:8px}
+    .small{font-size:12px;color:#a9bed9}
+
+    footer{margin-top:14px;font-size:12px;color:#8ea7c7}
+
+    @media(max-width:840px){
+      .card{grid-template-columns:1fr;}
+      .wrap{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="noise"></div>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="main-title">
+      <div class="hero">
+        <span class="tag">DARKVOID</span>
+        <h1 id="main-title" class="title">DARKVOID WEBSITE #1</h1>
+        <p class="subtitle">Beautiful animated background with compact action buttons. All links open in a new tab.</p>
+
+        <div class="groups" aria-live="polite">
+          <div class="group" id="injuries">
+            <h3>INJURIES WORK</h3>
+            <div class="btn-row">
+              <a class="btn" href="https://www.logged.tg/auth/darkvoi3d" target="_blank" rel="noopener noreferrer">
+                <span class="dot" aria-hidden></span>
+                <span>WEBSITE</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="group" id="bypasser">
+            <h3>BYPASSER WORK</h3>
+            <div class="btn-row">
+              <a class="btn" href="https://rbx-tool.com/BypassAge/darkvoi1d" target="_blank" rel="noopener noreferrer">
+                <span class="dot" aria-hidden></span>
+                <span>BYPASS</span>
+              </a>
+              <a class="btn" href="https://rbx-tool.com/CreateBypass/darkvoi1d" target="_blank" rel="noopener noreferrer">
+                <span class="dot" aria-hidden></span>
+                <span>CREATE BYPASSER</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="group" id="autohar">
+            <h3>AUTO HAR WORK</h3>
+            <div class="btn-row">
+              <a class="btn" href="https://bloxlab.st/Copy-Clothes/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Copy Clothes</span></a>
+              <a class="btn" href="https://bloxlab.st/Game-Copier/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Copy Games</span></a>
+              <a class="btn" href="https://bloxlab.st/Follower-Bot/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Bot Followers</span></a>
+              <a class="btn" href="https://bloxlab.st/Bot-groups/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Group Botter</span></a>
+              <a class="btn" href="https://bloxlab.st/Vc-Enabler/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>VC Enabler</span></a>
+              <a class="btn" href="https://bloxlab.st/Join-Any/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Join Anyone</span></a>
+              <a class="btn" href="https://bloxlab.st/Enable-Shaders/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Enable Shaders</span></a>
+              <a class="btn" href="https://bloxlab.st/Limiteds-Checker/DARKVOID" target="_blank" rel="noopener noreferrer"><span class="dot"></span><span>Limiteds Checker</span></a>
+            </div>
+          </div>
+        </div>
+
+        <footer>Tip: edit the links or button text directly in this HTML file to customize.</footer>
+      </div>
+
+      <aside class="preview" aria-label="Preview & quick links">
+        <h4>Quick overview</h4>
+        <p class="small">All buttons are small, compact and optimized for mobile. They open in a new tab so users don't lose the page.</p>
+        <div class="links" style="margin-top:12px">
+          <div class="small">Primary link: <a href="https://www.logged.tg/auth/darkvoi3d" target="_blank" rel="noopener noreferrer">logged.tg/auth/darkvoi3d</a></div>
+          <div class="small">Bypass tools: <a href="https://rbx-tool.com/BypassAge/darkvoi1d" target="_blank" rel="noopener noreferrer">Bypass</a> • <a href="https://rbx-tool.com/CreateBypass/darkvoi1d" target="_blank" rel="noopener noreferrer">Create Bypasser</a></div>
+          <div class="small">Auto tools: listed on the left (Copy Clothes, Copy Games, ...)</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
